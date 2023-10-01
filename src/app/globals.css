@@ -1,27 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.todos {
+  list-style: none; /* Remove bullet points */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.todos li {
+  display: flex;
+  align-items: center; /* Align checkboxes and text */
+  margin-bottom: 10px; /* Adjust as needed */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.todos li.completed {
+  text-decoration: line-through; /* Apply strikethrough for completed todos */
+}
+
+.todos li input[type="checkbox"] {
+  margin-right: 10px; /* Add space between checkbox and text */
 }
